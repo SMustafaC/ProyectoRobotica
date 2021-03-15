@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row{
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.loader{
+    background: gray;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 99%, 0 100%, 0% 50%);
+    transition: clip-path 3s ease-in-out ;
+}
+
+.loader2{
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+;
+}
+
+#title{
+    text-align: left;
+}
+
+/*
+Change bg when scroll
+ */
+.navbar.bg-dark{
+    background: transparent !important;
+}
+
+.navbar.bg-dark.scrolled{
+    background: blue !important;
+}
+
+/*
+End bg scrolled
+*/
+
+.laU{
+    width: 500px;
+	height: 150px;
+	object-fit: none;
+}

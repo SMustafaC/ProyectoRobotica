@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename="./css/canvas.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="./css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/styles.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <title>Proyecto Robotica</title>
+</head>
+<body>
+    <!--Page Loader-->
+    <div class="loader" id="loader">
+        <img src="{{ url_for('static', filename='./img/robotarium_header.png') }}" alt="loader-img">
+    </div>
+    <!--Page Loader Ends-->
+
+    <!--Header
+<header id="title">
+    <h1><img src="{{ url_for('static', filename='./img/unnamed.jpg') }}" class="laU"></h1>
+</header>
+    Header Ends-->
+
+    <!--Navbar begin-->
+    <nav class="navbar navbar-light navbar-expand-md bg-dark justify-content-center sticky-top">
+        <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href={{ url_for('index') }}>Inicio</a>
+                    </li>
+                     <li class="nav-item active">
+                         <a class="nav-link" href="#">Trazar Figuras</a>
+                     </li>
+                </ul>
+            </div>
+    </nav>
+
+    <!-- Navbar ends-->
+
+
+    <div id="horizontal"></div>
+
+    <div id="cont">
+        <canvas width="1000px" height="500px" id="canvas"></canvas>
+
+        <button id="btnAgregarRobot" onclick="addNewRobot()">Agregar Robot</button>
+
+        <button id="btnQuitarRobot" onclick="deleteRobot()">Quitar Robot</button>
+
+        <p>Escoja el angulo en grados °</p>
+
+        <input type="range" name="rango" min="0" max="360" step="1" id="controlGrados" onchange="cambia()" >
+
+        <button id="btnSave" onclick="savePos()">Guardar posicion actual</button>
+
+        <button id="btnShow" onclick="show()">Ver</button>
+
+        <!--<input type="number" name="numero" min="0" max="360" step="1" id="controlGradosNum">
+
+        <button id="btnJoinTwoRobots" onclick="joinTwoRobots()">Unir dos robots</button>-->
+
+    </div>
+
+    <!--Buttons ends-->
+
+
+<script src="{{ url_for('static', filename='./js/jquery-3.5.1.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='./js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='./js/canvas.js') }}"></script>
+<script src="{{ url_for('static' , filename='./js/scripts.js') }}"></script>
+
+
+<!-- Script to change bg of navbar on scroll-->
+    <script>
+        $(window).scroll(function (){
+        $('nav').toggleClass('scrolled',$(this).scrollTop() > 50);
+})
+    </script>
+</body>
+</html>
